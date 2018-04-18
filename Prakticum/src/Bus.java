@@ -1,7 +1,10 @@
+import java.util.Dictionary;
+import java.util.HashMap;
+
 public class Bus {
 
     private Buschauffeur buschauffeur;
-    private Mens[] stoelen = new Mens[24];
+    private HashMap<String, Mens> stoelen = new HashMap<String, Mens>();
 
     public Bus(Buschauffeur buschauffeur) {
 
@@ -17,40 +20,37 @@ public class Bus {
 
     }
 
-    public int vrijePlek() {
 
-        for (int i = 0; i < stoelen.length; i++) {
+    public Mens uistappen(String name) {
 
-            if (stoelen[i] == null){
 
-                return i;
 
+            if (!stoelen.containsKey(name)) {
+                System.out.println(name + " zit niet in de bus.");
+                return null;
             }
+            Mens uitgestapte = stoelen.get(name);
+            stoelen.remove(name);
+            showInfo(uitgestapte, " is uitgestapt.");
+            return uitgestapte;
 
-        }
-
-        return -1;
 
     }
 
     public void instappen(Mens mens) {
 
-        if (vrijePlek() == -1){
-
-            System.out.println("De bus is vol");
-
-        }
-
-        this.stoelen[vrijePlek()] = mens;
-        showInfo(mens);
+            String key = mens.getName();
+            Mens value = mens;
+            this.stoelen.put(key, value);
+            showInfo(mens, " is ingestapt.");
 
     }
 
-    public void showInfo(Mens mens){
+    public void showInfo(Mens mens, String actie){
 
         {
 
-            System.out.println(mens.getName()+ " is ingestapt");
+            System.out.println(mens.getName()+ actie);
 
         }
 
@@ -58,16 +58,8 @@ public class Bus {
 
     private int getCount() {
 
-        int aantal = 0;
-        for (int i = 0; i < stoelen.length; i++) {
+            return stoelen.size();
 
-            Mens huidigestoelen = stoelen[i];
-            if (huidigestoelen != null)
-                aantal++;
-
-        }
-
-        return aantal;
     }
 
     public String toString() {

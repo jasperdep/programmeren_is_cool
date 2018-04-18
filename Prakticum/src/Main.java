@@ -29,6 +29,10 @@ public class Main {
         bus.instappen(dagobert);
         System.out.println(bus);
 
+        //controlepost
+        Mens uitgestapte = bus.uistappen("kwik");
+        System.out.println(bus);
+
     }
 
 }
