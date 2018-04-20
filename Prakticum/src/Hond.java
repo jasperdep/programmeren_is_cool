@@ -1,7 +1,14 @@
-public class Hond {
+public class Hond implements Nameable {
 
     private boolean head = true;
     private boolean tail = true;
+    private String name;
+
+    public Hond(String name){
+
+        this.name = name;
+
+    }
 
     public boolean hasHead() {
 
@@ -18,6 +25,12 @@ public class Hond {
     public boolean equals(Kat kat) {
 
         return  (kat.hasHead() == this.hasHead() && kat.hasTail() == this.hasTail());
+
+    }
+
+    public String getName(){
+
+        return this.name;
 
     }
 }

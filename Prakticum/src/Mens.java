@@ -1,4 +1,4 @@
-public abstract class Mens {
+public class Mens implements Nameable {
 
     private String name;
 

@@ -3,9 +3,9 @@ public class Main {
     public static void main(String[] args) {
 
         Buschauffeur buschauffeur = new Buschauffeur("Andries");
-        Hond thomas = new Hond();
+        Hond thomas = new Hond("Thomas");
 
-        Hond shawn = new Hond();
+        Hond shawn = new Hond("Shawn");
         Kat henk = new Kat();
 
         System.out.println(buschauffeur.zijnGelijk(thomas, henk));
@@ -18,20 +18,28 @@ public class Main {
         Schoolkind kwak = new Schoolkind("kwak");
 
         bus.instappen(kwik, kwek, kwak);
-        System.out.println(bus);
+        bus.info();
 
         //bushalte 2
         Schoolkind rimmert = new Schoolkind("Rimmert");
         bus.instappen(rimmert);
-        System.out.println(bus);
+        bus.info();
 
         OudeMeneer dagobert = new OudeMeneer("Dagobert");
         bus.instappen(dagobert);
-        System.out.println(bus);
+        bus.info();
 
         //controlepost
-        Mens uitgestapte = bus.uistappen("kwik");
-        System.out.println(bus);
+        Nameable uitgestapte = bus.uitstappen("kwik");
+        bus.info();
+
+        //hond stapt in de bus
+        Hond loebas = new Hond("Loebas");
+        bus.instappen(loebas);
+        bus.info();
+
+        BusStation vlissingen = new BusStation();
+        vlissingen.rijdtBinnen(bus);
 
     }
 
