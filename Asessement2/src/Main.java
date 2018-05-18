@@ -2,7 +2,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Station goes = new Station("Goes");
         Station arnemuiden = new Station("Arnemuiden");
         Station middelburg = new Station("Middelburg");
         Station vlissingenSouburg = new Station("Vlissingen-Souburg");
@@ -18,7 +17,7 @@ public class Main {
         Reiziger piet = new Reiziger("Piet", true, 1, "Vlissingen");
         Reiziger henk = new Reiziger("Henk", false, 0, "Middelbrug");
         Reiziger john = new Reiziger("John", true, 2, "Vlissingen-Souburg");
-        Reiziger jack = new Reiziger("John", true, 2, "Vlissingen-Souburg");
+        Reiziger jack = new Reiziger("Jack", true, 2, "Vlissingen-Souburg");
         Reiziger giorgio = new Reiziger("Giorgio", true, 1, "Vlissingen");
 
         System.out.println("");
